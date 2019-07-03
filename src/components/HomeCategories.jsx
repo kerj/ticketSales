@@ -3,7 +3,7 @@ import Category from './Category';
 import football from './../img/football.jpg';
 import music from './../img/music.png';
 import basketball from './../img/basketball.png';
-import soccor from './../img/soccor.jpg';
+import soccer from './../img/soccer.jpg';
 
 const categoryList = [
   {
@@ -11,28 +11,35 @@ const categoryList = [
     img: [
       basketball,
       football,
-      soccor
+      soccer,
+      music
     ]
   },
   {
     name: 'Music',
     img: [
-      music,
-      soccor
+      basketball,
+      football,
+      soccer,
+      music
     ]
   },
   {
     name: 'Popular this Weekend',
     img: [
+      basketball,
       football,
-      basketball
+      soccer,
+      music
     ]
        
   },
   {
     name: 'Top Teams',
     img: [
-      soccor,
+      basketball,
+      football,
+      soccer,
       music
     ]
   }

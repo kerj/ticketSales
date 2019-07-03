@@ -1,5 +1,7 @@
 import React from 'react';
 import Selfie from './../img/selfie.jpg';
+import { Link } from 'react-router-dom';
+
 
 function Header() {
   var headerStyles = {
@@ -10,7 +12,7 @@ function Header() {
   };
   return (
     <div style={headerStyles}>
-            I am a header
+      <Link to="/"> <h2>Click to go home</h2></Link>
     </div>
   );
 }

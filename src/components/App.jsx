@@ -1,6 +1,6 @@
 import React from 'react';
-import Schedule from './Schedule';
 import Header from './Header';
+import Home from './Home';
 import { Switch, Route } from 'react-router-dom';
 
 

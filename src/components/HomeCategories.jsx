@@ -8,19 +8,33 @@ import soccor from './../img/soccor.jpg';
 const categoryList = [
   {
     name: 'Sports',
-    img: basketball
+    img: [
+      basketball,
+      football,
+      soccor
+    ]
   },
   {
     name: 'Music',
-    img: music
+    img: [
+      music,
+      soccor
+    ]
   },
   {
     name: 'Popular this Weekend',
-    img: football
+    img: [
+      football,
+      basketball
+    ]
+       
   },
   {
-      name: 'Top Teams',
-      img: soccor
+    name: 'Top Teams',
+    img: [
+      soccor,
+      music
+    ]
   }
 ];
 

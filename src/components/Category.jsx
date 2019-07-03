@@ -6,13 +6,22 @@ export default function Category(props) {
     <div>
       <h1>{props.name}</h1>
       <div>
-        <img src={props.img} alt=""/>
+        {props.img.map((image, index)=>{
+          if(index === props.img.length-1) {
+            return <img src={image} alt="last image"/>;
+          } else{
+            return <img src={image} alt=""/>;
+          }
+        }
+        )}
+        
       </div>
+      <hr/>
     </div>
   );
 }
 
 Category.propTypes = {
-  name: PropTypes.string,
-  img: PropTypes.string
+  name: PropTypes.string.isRequired,
+  img: PropTypes.array.isRequired
 };

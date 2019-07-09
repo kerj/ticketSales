@@ -17,42 +17,42 @@ class App extends React.Component {
           event: 'The Misfats',
           eventType: 'music',
           date: '11-1-19',
-          votes: '0'
+          votes: 0
         },
         {
           id: 2,
           event: 'Trailblazers vs Cowboys',
           eventType: 'sport',
           date: '10-5-19',
-          votes: '0'
+          votes: 0
         },
         {
           id: 3,
           event: 'Cowboys vs Reds',
           eventType: 'sport',
           date: '4-4-19',
-          votes: '0'
+          votes: 0
         },
         {
           id: 4,
           event: 'Insect Warfare',
           eventType: 'music',
           date: '6-5-19',
-          votes: '0'
+          votes: 0
         },
         {
           id: 5,
           event: 'Baseball vs Football',
           eventType: 'sport',
           date: '10-5-666',
-          votes: '0'
+          votes: 0
         },
         {
           id: 6,
           event: 'Soccor vs Log Throwing',
           eventType: 'sport',
           date: '10-999-19',
-          votes: '0'
+          votes: 0
         }
       ]
     };
@@ -60,6 +60,7 @@ class App extends React.Component {
     
     this.handleAddingNewTicket = this.handleAddingNewTicket.bind(this);
     this.handleUpVote = this.handleUpVote.bind(this);
+    this.handleDownVote = this.handleDownVote.bind(this);
   }
 
   // maybe useless... unless we add new tickets
@@ -70,10 +71,17 @@ class App extends React.Component {
   }
 
   handleUpVote(ticket) {
-    ticket.votes++;
-    this.setState(this.state.masterTicketList.ticket.votes);
+    // ticket.votes++;
+    // this.setState(this.state.masterTicketList[ticket.id]);
+    console.log("UPVOTE LOSER")
   }
 
+  handleDownVote(ticket){
+    // ticket.votes--;
+    // this.setState(this.state.masterTicketList[ticket.id]);
+    console.log("DOWNVOTE LOSER")
+  }
+  
   render(){
     return (
       <div>
@@ -86,10 +94,11 @@ class App extends React.Component {
           }
         `}
         </style>
+        <button onClick={()=>this.handleUpVote(this.state.masterTicketList[0])}>CLICK MY DUMB ASS</button>
         <Header />
         <Switch>
-          <Route exact path = '/' component = {Home} />
-          <Route path = '/seating' component = {Seating} />
+          <Route exact path='/' component={Home} />
+          <Route path='/seating' render={() => <Seating onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
         </Switch>
       </div>
     );

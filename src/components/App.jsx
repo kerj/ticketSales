@@ -71,15 +71,16 @@ class App extends React.Component {
   }
 
   handleUpVote(ticket) {
-    // ticket.votes++;
-    // this.setState(this.state.masterTicketList[ticket.id]);
-    console.log("UPVOTE LOSER")
+    console.log(ticket);
+    ticket.votes++;
+    this.setState(this.state.masterTicketList[ticket.id]);
+    console.log(ticket.votes)
   }
 
   handleDownVote(ticket){
-    // ticket.votes--;
-    // this.setState(this.state.masterTicketList[ticket.id]);
-    console.log("DOWNVOTE LOSER")
+    ticket.votes--;
+    this.setState(this.state.masterTicketList[ticket.id]);
+    console.log(ticket.votes)
   }
   
   render(){
@@ -98,7 +99,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/seating' render={() => <Seating onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} />} />
+          <Route path='/seating' render={() => <Seating onUpVote={this.handleUpVote} onDownVote={this.handleDownVote} ticketList={this.state.masterTicketList} />} />
         </Switch>
       </div>
     );

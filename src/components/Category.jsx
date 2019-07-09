@@ -17,14 +17,15 @@ export default function Category(props) {
             height: 200px;
             width: 200px;
         }
-      `}</style>
+      `}
+      </style>
       <h1>{props.name}</h1>
-      <div className='test'>
+      <div className = 'test'>
         {props.img.map((image, index) => {
           if (index === props.img.length - 1) {
-            return <Link to='/seating'><img src={image} alt="last image" /></Link>;
+            return <Link to = '/seating'><img src = {image} alt = "last image" /></Link>;
           } else {
-            return <Link to='/seating'><img src={image} alt="" /></Link>;
+            return <Link to = '/seating'><img src = {image} alt = "" /></Link>;
           }
         }
         )}

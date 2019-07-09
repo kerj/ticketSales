@@ -11,8 +11,8 @@ function Header() {
     backgroundSize: '100% 400px'
   };
   return (
-    <div style={headerStyles}>
-      <Link to="/"> <h2>Click to go home</h2></Link>
+    <div style = {headerStyles}>
+      <Link to = "/"> <h2>Click to go home</h2></Link>
     </div>
   );
 }

@@ -50,9 +50,9 @@ export default function HomeCategories() {
     <div>
       {categoryList.map((category, index) =>
         <Category
-          name={category.name}
-          img={category.img}
-          key={index}
+          name = {category.name}
+          img = {category.img}
+          key = {index}
         />
       )}
     </div>

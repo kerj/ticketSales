@@ -1,35 +1,45 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function Category(props) {
   return (
     <div>
-      <style jsx>{`
-      .test {
-          display: flex;
-          margin: 10px;
-          padding: 5%;
-          justify-content: space-around;
-        }
-        img {
+      <style jsx>
+        {`
+          .test {
+            display: flex;
+            margin: 10px;
+            padding: 5%;
+            justify-content: space-around;
+          }
+          img {
             display: flex;
             height: 200px;
             width: 200px;
-        }
-      `}
+          }
+        `}
       </style>
       <h1>{props.name}</h1>
-      <div className = 'test'>
+      <div className="test">
         {props.img.map((image, index) => {
-          if (index === props.img.length - 1) {
-            return <Link to = '/seating'><img src = {image} alt = "last image" /></Link>;
+          console.log(image.id);
+          
+          if (index=== props.img.length) {
+            
+            return (
+              <Link key = {index} to="/seating">
+                <img src={image} />
+              </Link>
+            );
           } else {
-            return <Link to = '/seating'><img src = {image} alt = "" /></Link>;
+            return (
+              <Link key={index} to="/seating">
+                <img src={image} />
+              </Link>
+            );
           }
-        }
-        )}
-
+        })}
       </div>
       <hr />
     </div>
@@ -38,5 +48,6 @@ export default function Category(props) {
 
 Category.propTypes = {
   name: PropTypes.string.isRequired,
-  img: PropTypes.array.isRequired
+  img: PropTypes.array.isRequired,
+  id: PropTypes.number
 };

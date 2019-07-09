@@ -7,6 +7,7 @@ import soccer from './../img/soccer.jpg';
 
 const categoryList = [
   {
+    id: 1,
     name: 'Sports',
     img: [
       basketball,
@@ -16,6 +17,7 @@ const categoryList = [
     ]
   },
   {
+    id: 2,
     name: 'Music',
     img: [
       basketball,
@@ -25,6 +27,7 @@ const categoryList = [
     ]
   },
   {
+    id: 3,
     name: 'Popular this Weekend',
     img: [
       basketball,
@@ -35,6 +38,7 @@ const categoryList = [
        
   },
   {
+    id: 4,
     name: 'Top Teams',
     img: [
       basketball,
@@ -48,11 +52,11 @@ const categoryList = [
 export default function HomeCategories() {
   return (
     <div>
-      {categoryList.map((category, index) =>
+      {categoryList.map((category) =>
         <Category
           name = {category.name}
           img = {category.img}
-          key = {index}
+          key = {category.id}
         />
       )}
     </div>
